@@ -1,46 +1,242 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop (JVM).
+# 🎬 Movie Explorer
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+A modern **Movies & TV Shows Explorer** built with **Kotlin** and **Compose Multiplatform**, showcasing modern Android development practices with **MVI**, **Clean Architecture**, and a responsive cross-platform UI. The application allows users to discover trending, popular, and top-rated movies & TV shows, search content, explore detailed information, browse image galleries, and watch trailers.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
-
-### Running the apps
-
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
-
-- Android app: `./gradlew :androidApp:assembleDebug`
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
-- Web app:
-  - Wasm target (faster, modern browsers): `./gradlew :webApp:wasmJsBrowserDevelopmentRun`
-  - JS target (slower, supports older browsers): `./gradlew :webApp:jsBrowserDevelopmentRun`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
-
-### Running tests
-
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
-
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- Desktop tests: `./gradlew :shared:jvmTest`
-- Web tests:
-  - Wasm target: `./gradlew :shared:wasmJsTest`
-  - JS target: `./gradlew :shared:jsTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
+> 🚀 Built as a portfolio project to demonstrate modern Android & Kotlin Multiplatform development.
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## 📱 Demo
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+![Demo](screenshots/demo.gif)
+
+---
+
+# 🚀 Highlights
+
+- Built with Compose Multiplatform
+- Follows MVI + Clean Architecture
+- Supports Android, iOS, Desktop & Web
+- Responsive UI across multiple screen sizes
+- Ktor networking with Kotlinx Serialization
+- Pagination, Search & Error Handling
+- Modular and scalable project structure
+
+---
+
+# ✨ Features
+
+- 🎬 Browse Trending, Popular & Top Rated Movies
+- 📺 Browse TV Shows
+- 🔍 Powerful Search
+- 📄 Detailed Movie & TV Information
+- 🎭 Cast & Crew
+- ⭐ Ratings & Reviews
+- 🖼️ Full Screen Image Gallery
+- ▶️ Watch Official Trailers
+- 🌍 Cross-Platform Support (Android, iOS, Desktop & Web)
+- 📱 Responsive UI for Multiple Screen Sizes
+- 🌙 Modern Material 3 Design
+- ⚡ Pagination
+- 🔄 Loading, Error & Empty States
+
+---
+
+# 🛠 Tech Stack
+
+### Language
+
+- Kotlin
+
+### UI
+
+- Compose Multiplatform
+- Material 3
+- Navigation Compose
+- Responsive Layout
+
+### Architecture
+
+- MVI (Model–View–Intent)
+- Clean Architecture
+- Repository Pattern
+- Modular Feature-Based Structure
+
+### Dependency Injection
+
+- Koin
+
+### Networking
+
+- Ktor Client
+- Kotlinx Serialization
+
+### Asynchronous Programming
+
+- Kotlin Coroutines
+- Flow
+- StateFlow
+
+### Image Loading
+
+- Coil 3
+
+### API
+
+- TMDB (The Movie Database)
+
+---
+
+# 📂 Project Structure
+
+```
+movie_explorer
+│
+├── core
+│   ├── components
+│   ├── dummy
+│   ├── navigation
+│   ├── ui
+│   └── utils
+│
+├── data
+│   ├── dto
+│   ├── mapper
+│   ├── remote
+│   └── repository
+│
+├── di
+│   ├── AppModule.kt
+│   ├── DetailsModule.kt
+│   ├── HomeModule.kt
+│   ├── Koin.kt
+│   ├── ListingModule.kt
+│   └── NetworkModule.kt
+│
+├── domain
+│   ├── model
+│   ├── repository
+│   └── usecase
+│
+├── features
+│   ├── splash
+│   ├── home
+│   ├── details
+│   ├── listingScreen
+│   └── imageGallery
+│
+├── App.kt
+├── Greeting.kt
+├── GreetingUtil.kt
+└── Platform.kt
+```
+
+---
+
+# 📸 Screenshots
+
+## Android
+
+| Splash | Home |
+|--------|------|
+| ![](screenshots/mobile/movie_exp_5.png) | ![](screenshots/mobile/movie_exp_1.png) |
+
+| Details | Search |
+|---------|--------|
+| ![](screenshots/mobile/movie_exp_2.png) | ![](screenshots/mobile/movie_exp_3.png) |
+
+| Listing | Gallery |
+|---------|---------|
+| ![](screenshots/mobile/movie_exp_4.png) | ![](screenshots/mobile/movie_exp_6.png) |
+
+---
+
+## Desktop (macOS)
+
+| Home | Details |
+|------|---------|
+| ![](screenshots/desktop/desktop_1.png) | ![](screenshots/desktop/desktop_2.png) |
+
+| Search | Listing |
+|--------|----------|
+| ![](screenshots/desktop/desktop_3.png) | ![](screenshots/desktop/desktop_4.png) |
+
+---
+
+# 🏛 Architecture
+
+The project follows **Clean Architecture** with the **MVI (Model–View–Intent)** pattern to keep business logic separated from the presentation layer.
+
+```
+Presentation (MVI)
+        │
+        ▼
+     Use Cases
+        │
+        ▼
+   Repository
+        │
+        ▼
+Remote Data Source (Ktor)
+```
+
+---
+
+# 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/code-with-anil-mandyal/movie-explorer-cmp.git
+```
+
+### Open the project
+
+Open the project using the latest version of **Android Studio**.
+
+### Build & Run
+
+Run the Android, iOS, Web or Desktop target.
+
+---
+
+# 📦 Libraries Used
+
+- Compose Multiplatform
+- Kotlin Coroutines
+- Flow & StateFlow
+- Koin
+- Ktor Client
+- Coil 3
+- Kotlinx Serialization
+- Navigation Compose
+- Material 3
+
+---
+
+# 🌐 API
+
+This project uses **The Movie Database (TMDB) API**.
+
+🔗 https://www.themoviedb.org/
+
+---
+
+# 👨‍💻 Author
+
+**Anil Kumar**
+
+- GitHub: https://github.com/code-with-anil-mandyal
+- LinkedIn: https://www.linkedin.com/in/anil-mandyal
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
