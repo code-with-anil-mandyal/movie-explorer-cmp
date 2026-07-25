@@ -6,10 +6,8 @@ object NetworkConstants {
     const val BANNER_PIC_BASE_URL = "https://image.tmdb.org/t/p/w780"
     const val MOVIE_CARD_PIC_BASE_URL = "https://image.tmdb.org/t/p/w500"
     const val TOKEN = "YOUR_AUTH_TOKEN"
-    const val DISCOVER_MOVIES = "discover/movie"
-    const val DISCOVER_TV = "discover/tv"
-    const val TOP_RATED_MOVIES = "movie/top_rated"
-    const val TOP_RATED_TV = "tv/top_rated"
+    const val DISCOVER = "discover"
+    const val TOP_RATED = "top_rated"
 
     const val MOVIE = "movie"
     const val IMAGES = "images"
@@ -20,11 +18,8 @@ object NetworkConstants {
     const val VIDEOS = "videos"
     const val REVIEWS = "reviews"
     const val NOW_PLAYING = "now_playing"
-
     const val TRENDING = "trending"
-
     const val SEARCH = "search"
-
     const val MULTI = "multi"
 
     const val TV = "tv"

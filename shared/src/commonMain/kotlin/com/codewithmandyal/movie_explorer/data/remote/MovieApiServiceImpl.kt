@@ -9,8 +9,7 @@ import com.codewithmandyal.movie_explorer.data.dto.details.trailer.TrailerRespon
 import com.codewithmandyal.movie_explorer.data.dto.movieDto.MoviesResponseDto
 import com.codewithmandyal.movie_explorer.data.dto.tvDto.TvResponseDto
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.CREDITS
-import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.DISCOVER_MOVIES
-import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.DISCOVER_TV
+import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.DISCOVER
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.IMAGES
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.MOVIE
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.MULTI
@@ -20,8 +19,7 @@ import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.RECOMMEND
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.REVIEWS
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.SEARCH
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.SIMILAR
-import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.TOP_RATED_MOVIES
-import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.TOP_RATED_TV
+import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.TOP_RATED
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.TRENDING
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.TV
 import com.codewithmandyal.movie_explorer.data.remote.NetworkConstants.VIDEOS
@@ -35,7 +33,7 @@ class MovieApiServiceImpl(
 ) : MovieApiService {
 
     override suspend fun discoverMovies(page: Int, mediaType: MediaType): MoviesResponseDto {
-        return client.get(DISCOVER_MOVIES) {
+        return client.get("$DISCOVER/$MOVIE") {
 
             parameter("page", page)
 
@@ -43,7 +41,7 @@ class MovieApiServiceImpl(
     }
 
     override suspend fun discoverTv(page: Int, mediaType: MediaType): TvResponseDto {
-        return client.get(DISCOVER_TV) {
+        return client.get("$DISCOVER/$TV") {
 
             parameter("page", page)
 
@@ -67,7 +65,7 @@ class MovieApiServiceImpl(
         page: Int,
         mediaType: MediaType
     ): MoviesResponseDto {
-        return client.get(TOP_RATED_MOVIES) {
+        return client.get("$MOVIE/$TOP_RATED") {
             parameter("language", language)
             parameter("page", page)
         }.body()
@@ -77,14 +75,11 @@ class MovieApiServiceImpl(
         language: String,
         page: Int
     ): TvResponseDto {
-        return client.get(TOP_RATED_TV){
+        return client.get("$TV/$TOP_RATED"){
             parameter("language", language)
             parameter("page", page)
         }.body()
     }
-
-
-
 
 
 

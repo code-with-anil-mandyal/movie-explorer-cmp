@@ -22,8 +22,6 @@ fun AppNavigation() {
 
     val navController = rememberNavController()
 
-
-
     NavHost(
         navController = navController,
         startDestination = SplashRoute
