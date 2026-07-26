@@ -20,11 +20,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
 import com.codewithmandyal.movie_explorer.core.components.SpacerHorizontal
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
 import com.codewithmandyal.movie_explorer.domain.model.Review
 
 @OptIn(ExperimentalMaterial3Api::class)

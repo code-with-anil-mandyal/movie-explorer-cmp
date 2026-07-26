@@ -8,9 +8,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
 import com.codewithmandyal.movie_explorer.domain.model.CastAndCrew
 
 @Composable

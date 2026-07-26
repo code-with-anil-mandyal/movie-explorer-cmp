@@ -10,7 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
 import com.codewithmandyal.movie_explorer.core.utils.YoutubeLauncher
 import com.codewithmandyal.movie_explorer.domain.model.Banner
@@ -22,7 +22,7 @@ import com.codewithmandyal.movie_explorer.features.details.components.banner.Det
 import com.codewithmandyal.movie_explorer.features.details.components.gallery.ImageGallery
 import com.codewithmandyal.movie_explorer.features.details.components.review.ReviewScreen
 import com.codewithmandyal.movie_explorer.features.details.components.topBar.DetailsTopBar
-import com.codewithmandyal.movie_explorer.features.home.components.ContentSection
+import com.codewithmandyal.movie_explorer.features.home.defaults.components.ContentSection
 
 @Composable
 fun DetailsContent(

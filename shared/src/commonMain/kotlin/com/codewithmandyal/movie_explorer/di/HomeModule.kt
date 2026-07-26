@@ -8,7 +8,7 @@ import com.codewithmandyal.movie_explorer.domain.usecase.GetDiscoverUseCase
 import com.codewithmandyal.movie_explorer.domain.usecase.GetNowPlayingMoviesUseCase
 import com.codewithmandyal.movie_explorer.domain.usecase.GetPopularUseCase
 import com.codewithmandyal.movie_explorer.domain.usecase.GetTopRatedMoviesUseCase
-import com.codewithmandyal.movie_explorer.features.home.HomeViewModel
+import com.codewithmandyal.movie_explorer.features.home.common.HomeViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

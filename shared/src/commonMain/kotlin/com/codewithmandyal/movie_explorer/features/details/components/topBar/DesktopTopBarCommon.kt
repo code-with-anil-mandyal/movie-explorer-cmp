@@ -7,11 +7,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.codewithmandyal.movie_explorer.core.components.BackButton
 import com.codewithmandyal.movie_explorer.core.ui.defaults.BackButtonDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 
 @Composable
 fun DesktopTopBarCommon(

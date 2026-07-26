@@ -15,8 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
 import com.codewithmandyal.movie_explorer.domain.model.Review
 
 @Composable

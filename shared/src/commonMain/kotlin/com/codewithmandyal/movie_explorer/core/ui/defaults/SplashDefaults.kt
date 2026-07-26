@@ -5,7 +5,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 
 @Immutable
 object SplashDefaults {

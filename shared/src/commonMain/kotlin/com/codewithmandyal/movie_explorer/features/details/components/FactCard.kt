@@ -1,6 +1,5 @@
 package com.codewithmandyal.movie_explorer.features.details.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -15,9 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
 
 
 @Composable

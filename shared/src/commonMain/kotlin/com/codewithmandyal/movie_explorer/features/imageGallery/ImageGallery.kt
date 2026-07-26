@@ -17,8 +17,8 @@ import com.codewithmandyal.movie_explorer.core.components.ErrorView
 import com.codewithmandyal.movie_explorer.core.components.LoaderView
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
 import com.codewithmandyal.movie_explorer.core.ui.defaults.GalleryDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
 import com.codewithmandyal.movie_explorer.features.details.DetailsIntent
 import com.codewithmandyal.movie_explorer.features.details.DetailsViewModel

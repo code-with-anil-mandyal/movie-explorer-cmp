@@ -25,11 +25,11 @@ import androidx.compose.ui.unit.dp
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
 import com.codewithmandyal.movie_explorer.core.components.SpacerHorizontal
 import com.codewithmandyal.movie_explorer.core.ui.defaults.BannerDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
 import com.codewithmandyal.movie_explorer.core.utils.toYear
 import com.codewithmandyal.movie_explorer.domain.model.Movie
-import com.codewithmandyal.movie_explorer.features.home.components.GenreItem
+import com.codewithmandyal.movie_explorer.features.home.defaults.components.GenreItem
 
 @Composable
 fun BannerContent(

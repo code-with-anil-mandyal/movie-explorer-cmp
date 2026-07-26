@@ -12,13 +12,17 @@ import com.codewithmandyal.movie_explorer.core.navigation.animation.popFadeScale
 import com.codewithmandyal.movie_explorer.core.utils.ListingType
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
 import com.codewithmandyal.movie_explorer.features.details.DetailsScreen
-import com.codewithmandyal.movie_explorer.features.home.HomeScreen
+import com.codewithmandyal.movie_explorer.features.home.defaults.HomeScreen
+import com.codewithmandyal.movie_explorer.features.home.tv.TvHomeScreen
 import com.codewithmandyal.movie_explorer.features.imageGallery.ImageGallery
 import com.codewithmandyal.movie_explorer.features.listingScreen.ListingScreen
-import com.codewithmandyal.movie_explorer.features.splash.SplashScreen
+import com.codewithmandyal.movie_explorer.features.splash.defaults.SplashScreen
+import com.codewithmandyal.movie_explorer.features.splash.tv.TvSplashScreen
 
 @Composable
-fun AppNavigation() {
+fun AppNavigation(
+    isTv: Boolean = false
+) {
 
     val navController = rememberNavController()
 
@@ -28,31 +32,50 @@ fun AppNavigation() {
     ) {
 
         composable<SplashRoute> {
-            SplashScreen(
-                onSplashFinished = {
-                    navController.navigate(HomeRoute) {
-                        popUpTo<SplashRoute> {
-                            inclusive = true
+            if(isTv){
+                TvSplashScreen(
+                    onSplashFinished = {
+                        navController.navigate(HomeRoute) {
+                            popUpTo<SplashRoute> {
+                                inclusive = true
+                            }
+                            launchSingleTop = true
                         }
-                        launchSingleTop = true
                     }
-                }
-            )
+                )
+            }else{
+                SplashScreen(
+                    onSplashFinished = {
+                        navController.navigate(HomeRoute) {
+                            popUpTo<SplashRoute> {
+                                inclusive = true
+                            }
+                            launchSingleTop = true
+                        }
+                    }
+                )
+            }
+
         }
 
         composable<HomeRoute> {
-            HomeScreen(
-                onDetailsScreen = { movieId, mediaType ->
-                    navController.navigate(
-                        DetailsRoute(movieId, mediaType.name)
-                    )
-                },
-                onListingScreen = {
-                    navController.navigate(
-                        ListingRoute( it.name)
-                    )
-                }
-            )
+            if(isTv){
+                TvHomeScreen()
+            }else{
+                HomeScreen(
+                    onDetailsScreen = { movieId, mediaType ->
+                        navController.navigate(
+                            DetailsRoute(movieId, mediaType.name)
+                        )
+                    },
+                    onListingScreen = {
+                        navController.navigate(
+                            ListingRoute( it.name)
+                        )
+                    }
+                )
+            }
+
         }
 
         composable<DetailsRoute>(

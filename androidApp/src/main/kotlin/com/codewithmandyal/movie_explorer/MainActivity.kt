@@ -28,13 +28,11 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            App()
+            App(
+                isTv = applicationContext.isTv()
+            )
         }
     }
 }
 
 
-@Composable
-fun AppAndroidPreview() {
-    App()
-}

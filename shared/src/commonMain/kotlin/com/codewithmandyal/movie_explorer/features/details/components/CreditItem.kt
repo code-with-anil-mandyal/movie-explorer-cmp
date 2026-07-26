@@ -2,13 +2,11 @@ package com.codewithmandyal.movie_explorer.features.details.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,17 +15,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
 import com.codewithmandyal.movie_explorer.core.ui.defaults.CastCardDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
 import com.codewithmandyal.movie_explorer.domain.model.CastAndCrew
 import movieexplorer.shared.generated.resources.Res
 import movieexplorer.shared.generated.resources.movie_explorer_logo

@@ -21,8 +21,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.codewithmandyal.movie_explorer.core.components.SpacerHorizontal
 import com.codewithmandyal.movie_explorer.core.ui.defaults.ReviewCardDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
 
 
 @Composable

@@ -4,7 +4,7 @@ package com.codewithmandyal.movie_explorer.core.ui.defaults
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 
 
 @Immutable

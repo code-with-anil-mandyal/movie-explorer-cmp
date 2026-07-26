@@ -8,11 +8,11 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 import com.codewithmandyal.movie_explorer.domain.model.Movie
-import com.codewithmandyal.movie_explorer.features.home.components.CardsView
+import com.codewithmandyal.movie_explorer.features.home.defaults.components.CardsView
 
 @Composable
 fun ListingContentSection(

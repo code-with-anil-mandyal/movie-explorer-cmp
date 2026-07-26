@@ -21,9 +21,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import coil3.compose.AsyncImage
 import com.codewithmandyal.movie_explorer.core.ui.defaults.TrailerDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 import com.codewithmandyal.movie_explorer.domain.model.Video
 
 @Composable

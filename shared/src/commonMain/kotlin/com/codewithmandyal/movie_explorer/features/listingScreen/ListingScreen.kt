@@ -16,7 +16,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -29,19 +28,17 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.codewithmandyal.movie_explorer.core.components.ErrorView
 import com.codewithmandyal.movie_explorer.core.components.LoaderView
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 import com.codewithmandyal.movie_explorer.core.utils.ListingType
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
 import com.codewithmandyal.movie_explorer.features.details.components.topBar.DetailsTopBar
-import com.codewithmandyal.movie_explorer.features.home.components.CardsView
-import com.codewithmandyal.movie_explorer.features.home.components.topbar.SearchBar
+import com.codewithmandyal.movie_explorer.features.home.defaults.components.CardsView
 import com.codewithmandyal.movie_explorer.features.listingScreen.components.ListingMenuItem
 import com.codewithmandyal.movie_explorer.features.listingScreen.components.NoSearchResult
 import com.codewithmandyal.movie_explorer.features.listingScreen.components.SearchEmptyState
 import kotlinx.coroutines.flow.drop
-import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

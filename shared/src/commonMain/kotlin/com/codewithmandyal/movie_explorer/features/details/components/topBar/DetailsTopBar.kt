@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.dp
 import com.codewithmandyal.movie_explorer.core.components.BackButton
 import com.codewithmandyal.movie_explorer.core.components.SpacerHorizontal
 import com.codewithmandyal.movie_explorer.core.ui.defaults.BackButtonDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalAppDimens
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.filled.Close

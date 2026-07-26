@@ -9,8 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.codewithmandyal.movie_explorer.core.ui.defaults.BannerDefaults
-import com.codewithmandyal.movie_explorer.core.ui.responsive.LocalWindowType
-import com.codewithmandyal.movie_explorer.core.ui.responsive.WindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
+import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 import com.codewithmandyal.movie_explorer.domain.model.Banner
 import com.codewithmandyal.movie_explorer.domain.model.Movie
 
