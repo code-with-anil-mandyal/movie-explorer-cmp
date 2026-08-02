@@ -31,7 +31,7 @@ fun TvGenreItem(genre: String) {
             )
             .padding(
                 horizontal = dimens.itemSpacing,
-                vertical = 0.dp
+                vertical = 5.dp
             )
     ) {
 

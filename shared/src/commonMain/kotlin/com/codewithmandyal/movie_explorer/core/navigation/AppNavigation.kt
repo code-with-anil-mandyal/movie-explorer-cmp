@@ -11,7 +11,8 @@ import com.codewithmandyal.movie_explorer.core.navigation.animation.popFadeScale
 import com.codewithmandyal.movie_explorer.core.navigation.animation.popFadeScaleOut
 import com.codewithmandyal.movie_explorer.core.utils.ListingType
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
-import com.codewithmandyal.movie_explorer.features.details.DetailsScreen
+import com.codewithmandyal.movie_explorer.features.details.defaults.DetailsScreen
+import com.codewithmandyal.movie_explorer.features.details.tv.TvDetailsScreen
 import com.codewithmandyal.movie_explorer.features.home.defaults.HomeScreen
 import com.codewithmandyal.movie_explorer.features.home.tv.TvHomeScreen
 import com.codewithmandyal.movie_explorer.features.imageGallery.ImageGallery
@@ -60,7 +61,13 @@ fun AppNavigation(
 
         composable<HomeRoute> {
             if(isTv){
-                TvHomeScreen()
+                TvHomeScreen(
+                    onDetailsScreen = { movieId, mediaType ->
+                        navController.navigate(
+                            DetailsRoute(movieId, mediaType.name)
+                        )
+                    }
+                )
             }else{
                 HomeScreen(
                     onDetailsScreen = { movieId, mediaType ->
@@ -85,29 +92,51 @@ fun AppNavigation(
             popExitTransition = popFadeScaleOut
         ) { backStackEntry ->
 
-
-
             val route = backStackEntry.toRoute<DetailsRoute>()
 
             val mediaType = MediaType.valueOf(route.mediaType)
 
-            DetailsScreen(
-                movieId = route.movieId,
-                mediaType = mediaType,
-                onBackPress = {
-                    navController.popBackStack()
-                },
-                viewAllImages = { movieId, mediaType ->
-                    navController.navigate(
-                        GalleryRoute(movieId, mediaType.name)
-                    )
-                },
-                onViewDetails = { movieId, mediaType ->
-                    navController.navigate(
-                        DetailsRoute(movieId, mediaType.name)
-                    )
-                }
-            )
+            if(isTv){
+
+                TvDetailsScreen(
+                    onBackPress = {
+                        navController.popBackStack()
+                    },
+                    movieId = route.movieId,
+                    mediaType = mediaType,
+                    onViewDetails = {  movieId, mediaType ->
+
+                    },
+                    viewAllImages = { movieId, mediaType ->
+
+                    }
+                )
+
+            }else{
+
+                DetailsScreen(
+                    movieId = route.movieId,
+                    mediaType = mediaType,
+                    onBackPress = {
+                        navController.popBackStack()
+                    },
+                    viewAllImages = { movieId, mediaType ->
+                        navController.navigate(
+                            GalleryRoute(movieId, mediaType.name)
+                        )
+                    },
+                    onViewDetails = { movieId, mediaType ->
+                        navController.navigate(
+                            DetailsRoute(movieId, mediaType.name)
+                        )
+                    }
+                )
+
+            }
+
+
+
+
         }
 
         composable<ListingRoute>(

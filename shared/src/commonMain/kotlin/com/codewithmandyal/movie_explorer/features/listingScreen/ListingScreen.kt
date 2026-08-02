@@ -33,7 +33,7 @@ import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindo
 import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.WindowType
 import com.codewithmandyal.movie_explorer.core.utils.ListingType
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
-import com.codewithmandyal.movie_explorer.features.details.components.topBar.DetailsTopBar
+import com.codewithmandyal.movie_explorer.features.details.defaults.components.topBar.DetailsTopBar
 import com.codewithmandyal.movie_explorer.features.home.defaults.components.CardsView
 import com.codewithmandyal.movie_explorer.features.listingScreen.components.ListingMenuItem
 import com.codewithmandyal.movie_explorer.features.listingScreen.components.NoSearchResult
@@ -151,7 +151,7 @@ fun ListingScreen(
                             "MOVIE EXPLORER"
                         }
                     }
-                    DetailsTopBar(
+                    _root_ide_package_.com.codewithmandyal.movie_explorer.features.details.defaults.components.topBar.DetailsTopBar(
                         showSearchBar = listingType == ListingType.SEARCH,
                         elevated = true,
                         searchQuery = state.query,

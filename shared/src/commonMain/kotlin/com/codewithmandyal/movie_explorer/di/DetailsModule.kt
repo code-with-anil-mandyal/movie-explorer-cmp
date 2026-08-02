@@ -9,7 +9,7 @@ import com.codewithmandyal.movie_explorer.domain.usecase.GetMovieTrailerVideoUse
 import com.codewithmandyal.movie_explorer.domain.usecase.GetRecommendedUseCase
 import com.codewithmandyal.movie_explorer.domain.usecase.GetReviewsUseCase
 import com.codewithmandyal.movie_explorer.domain.usecase.GetSimilarUseCase
-import com.codewithmandyal.movie_explorer.features.details.DetailsViewModel
+import com.codewithmandyal.movie_explorer.features.details.common.DetailsViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

@@ -40,7 +40,8 @@ fun TvBannerSlider(
     banners: List<Movie>,
     modifier: Modifier = Modifier,
     onWatchNow: (Int) -> Unit = {},
-    onDetailsScreen: (Int) -> Unit
+    onDetailsScreen: (Int) -> Unit,
+    onWatchNowFocused: () -> Unit = {}
 ) {
 
     if (banners.isEmpty()) return
@@ -91,6 +92,9 @@ fun TvBannerSlider(
                 onDetailsScreen = onDetailsScreen,
                 onBannerFocusChanged = {
                     bannerHasFocus = it
+                },
+                onWatchNowFocused = {
+                    onWatchNowFocused()
                 }
             )
         }

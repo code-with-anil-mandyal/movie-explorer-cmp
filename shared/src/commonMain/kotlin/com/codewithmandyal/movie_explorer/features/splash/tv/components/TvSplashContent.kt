@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -35,6 +36,53 @@ fun TvSplashContent(
         onSplashFinished()
     }
 
+//    Box(
+//        modifier = Modifier.fillMaxSize()
+//    ) {
+//
+//        TvAnimatedBackground()
+//
+//        Column(
+//            modifier = Modifier
+//                .align(Alignment.Center)
+//                .offset(y = (-24).dp), // Slightly higher for better visual balance
+//            horizontalAlignment = Alignment.CenterHorizontally
+//        ) {
+//
+//            Box(
+//                contentAlignment = Alignment.Center
+//            ) {
+//
+//                TvAnimatedGlow()
+//
+//                TvSplashLogo()
+//            }
+//
+//            SpaceVertical(dimens.sectionSpacing)
+//
+//            TvSplashTitle()
+//        }
+//
+//        Column(
+//            modifier = Modifier
+//                .align(Alignment.BottomCenter)
+//                .widthIn(max = TvSplashDefaults.loadingWidth(windowType))
+//                .fillMaxWidth()
+//                .padding(
+//                    horizontal = dimens.screenPadding,
+//                    vertical = dimens.sectionSpacing
+//                ),
+//            horizontalAlignment = Alignment.CenterHorizontally
+//        ) {
+//
+//            LoadingBar()
+//
+//            SpaceVertical(dimens.itemSpacing)
+//
+//            TvLoadingText()
+//        }
+//    }
+
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -43,42 +91,35 @@ fun TvSplashContent(
 
         Column(
             modifier = Modifier
-                .align(Alignment.Center)
-                .offset(y = (-24).dp), // Slightly higher for better visual balance
+                .align(Alignment.Center),
+                //.offset(y = (-24).dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Box(
-                contentAlignment = Alignment.Center
-            ) {
-
+            Box(contentAlignment = Alignment.Center) {
                 TvAnimatedGlow()
+                TvSplashLogo(
 
-                TvSplashLogo()
+                )
             }
-
-            SpaceVertical(dimens.sectionSpacing)
-
-            TvSplashTitle()
-        }
-
-        Column(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .widthIn(max = TvSplashDefaults.loadingWidth(windowType))
-                .fillMaxWidth()
-                .padding(
-                    horizontal = dimens.screenPadding,
-                    vertical = dimens.sectionSpacing
-                ),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-
-            LoadingBar()
 
             SpaceVertical(dimens.itemSpacing)
 
-            TvLoadingText()
+            TvSplashTitle(
+                modifier = Modifier.offset(y = (-35).dp)
+            )
+
+            SpaceVertical(dimens.itemSpacing)
+
+            LoadingBar(
+                modifier = Modifier.width(
+                    TvSplashDefaults.loadingWidth(windowType)
+                )
+            )
+
+            //SpaceVertical(dimens.itemSpacing)
+
+           // TvLoadingText()
         }
     }
 }

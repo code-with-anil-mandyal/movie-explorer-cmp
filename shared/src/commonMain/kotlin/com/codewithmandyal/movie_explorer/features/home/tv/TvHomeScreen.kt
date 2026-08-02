@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.codewithmandyal.movie_explorer.core.components.ErrorView
 import com.codewithmandyal.movie_explorer.core.components.LoaderView
+import com.codewithmandyal.movie_explorer.core.utils.MediaType
 import com.codewithmandyal.movie_explorer.features.home.common.HomeIntent
 import com.codewithmandyal.movie_explorer.features.home.common.HomeViewModel
 import com.codewithmandyal.movie_explorer.features.home.tv.components.TvHomeContent
@@ -19,7 +20,8 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun TvHomeScreen(
-    viewModel: HomeViewModel = koinViewModel()
+    viewModel: HomeViewModel = koinViewModel(),
+    onDetailsScreen: (id: Int, mediaType: MediaType) -> Unit
 ){
 
     val state by viewModel.state.collectAsState()
@@ -49,7 +51,16 @@ fun TvHomeScreen(
             ){
 
                 TvHomeContent(
-                    state.nowPlayingMovies
+                    state.nowPlayingMovies,
+                    state.popularMovies,
+                    state.popularTv,
+                    state.topRatedMovies,
+                    state.topRatedTv,
+                    state.discoverMovies,
+                    state.discoverTv,
+                    onDetailsScreen = { id, mediaType ->
+                        onDetailsScreen(id, mediaType)
+                    }
                 )
 
 

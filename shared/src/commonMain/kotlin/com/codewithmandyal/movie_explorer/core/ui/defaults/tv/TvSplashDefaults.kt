@@ -12,9 +12,9 @@ object TvSplashDefaults {
 
     fun logoSize(windowType: TvWindowType): Dp =
         when (windowType) {
-            TvWindowType.Compact -> 260.dp
-            TvWindowType.Medium -> 340.dp
-            TvWindowType.Expanded -> 420.dp
+            TvWindowType.Compact -> 160.dp
+            TvWindowType.Medium -> 240.dp
+            TvWindowType.Expanded -> 320.dp
         }
 
     fun bottomPadding(windowType: TvWindowType): Dp =

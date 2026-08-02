@@ -20,10 +20,8 @@ import com.codewithmandyal.movie_explorer.core.ui.defaults.GalleryDefaults
 import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalAppDimens
 import com.codewithmandyal.movie_explorer.core.ui.responsive.defaults.LocalWindowType
 import com.codewithmandyal.movie_explorer.core.utils.MediaType
-import com.codewithmandyal.movie_explorer.features.details.DetailsIntent
-import com.codewithmandyal.movie_explorer.features.details.DetailsViewModel
-import com.codewithmandyal.movie_explorer.features.details.components.gallery.GalleryItem
-import com.codewithmandyal.movie_explorer.features.details.components.topBar.DetailsTopBar
+import com.codewithmandyal.movie_explorer.features.details.common.DetailsIntent
+import com.codewithmandyal.movie_explorer.features.details.common.DetailsViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -64,7 +62,7 @@ fun ImageGallery(
                     .background(Color(0xFF0F0F0F))
             ) {
                 item {
-                    DetailsTopBar(
+                    _root_ide_package_.com.codewithmandyal.movie_explorer.features.details.defaults.components.topBar.DetailsTopBar(
                         elevated = true,
                         title = "Image Gallery",
                         onBackPress = onBackPress
@@ -95,7 +93,7 @@ fun ImageGallery(
 
                             state.banners.forEach { banner ->
 
-                                GalleryItem(
+                                _root_ide_package_.com.codewithmandyal.movie_explorer.features.details.defaults.components.gallery.GalleryItem(
                                     banner = banner,
                                     width = itemWidth,
                                     height = GalleryDefaults.imageHeight(windowType)

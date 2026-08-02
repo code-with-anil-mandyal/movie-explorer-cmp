@@ -43,7 +43,9 @@ fun TvTopBar(
     downRequester : FocusRequester,
     onHomeClick: () -> Unit = {},
     onSearchClick: () -> Unit,
-    onSettingsClick: () -> Unit = {}
+    onSettingsClick: () -> Unit = {},
+    onInitialFocusRequested: () -> Unit,
+    requestInitialFocus: Boolean
 ) {
 
     val dimens = LocalTvDimens.current
@@ -54,8 +56,15 @@ fun TvTopBar(
 
     var logoFocused by remember { mutableStateOf(false) }
 
-    LaunchedEffect(Unit) {
-        focusRequester.requestFocus()
+//    LaunchedEffect(Unit) {
+//        focusRequester.requestFocus()
+//    }
+
+    LaunchedEffect(requestInitialFocus) {
+        if (requestInitialFocus) {
+            focusRequester.requestFocus()
+            onInitialFocusRequested()
+        }
     }
 
     val logoScale by animateFloatAsState(

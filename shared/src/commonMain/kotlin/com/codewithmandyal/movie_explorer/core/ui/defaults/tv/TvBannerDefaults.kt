@@ -8,12 +8,25 @@ import com.codewithmandyal.movie_explorer.core.ui.responsive.tv.TvWindowType
 @Immutable
 object TvBannerDefaults {
 
+//    fun height(windowType: TvWindowType): Dp =
+//        when (windowType) {
+//            TvWindowType.Compact -> 600.dp
+//            TvWindowType.Medium -> 700.dp
+//            TvWindowType.Expanded -> 800.dp
+//        }
+
     fun height(windowType: TvWindowType): Dp =
+//        when(windowType) {
+//            TvWindowType.Compact -> 300.dp
+//            TvWindowType.Medium -> 340.dp
+//            TvWindowType.Expanded -> 380.dp
+//        }
         when (windowType) {
-            TvWindowType.Compact -> 600.dp
-            TvWindowType.Medium -> 700.dp
-            TvWindowType.Expanded -> 800.dp
+            TvWindowType.Compact -> 360.dp
+            TvWindowType.Medium -> 420.dp
+            TvWindowType.Expanded -> 480.dp
         }
+
 
     fun contentWidth(windowType: TvWindowType): Dp =
         when (windowType) {
@@ -37,10 +50,20 @@ object TvBannerDefaults {
         }
 
     fun detailsBannerHeight(windowType: TvWindowType): Dp =
+//        when (windowType) {
+//            TvWindowType.Compact -> 720.dp
+//            TvWindowType.Medium -> 820.dp
+//            TvWindowType.Expanded -> 920.dp
+//        }
+//        when(windowType) {
+//            TvWindowType.Compact -> 300.dp
+//            TvWindowType.Medium -> 340.dp
+//            TvWindowType.Expanded -> 380.dp
+//        }
         when (windowType) {
-            TvWindowType.Compact -> 720.dp
-            TvWindowType.Medium -> 820.dp
-            TvWindowType.Expanded -> 920.dp
+            TvWindowType.Compact -> 400.dp
+            TvWindowType.Medium -> 450.dp
+            TvWindowType.Expanded -> 500.dp
         }
 
     fun detailsContentWidth(windowType: TvWindowType): Dp =

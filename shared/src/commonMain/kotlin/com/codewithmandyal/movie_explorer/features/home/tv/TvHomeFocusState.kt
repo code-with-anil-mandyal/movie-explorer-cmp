@@ -8,9 +8,10 @@ class TvHomeFocusState {
     val topBar = FocusRequester()
     val watchNow = FocusRequester()
 
-    val trending = FocusRequester()
-    val popular = FocusRequester()
-    val topRated = FocusRequester()
-    val upcoming = FocusRequester()
-    val tvShows = FocusRequester()
+    val popularMovie = FocusRequester()
+    val popularTv = FocusRequester()
+    val topRatedMovies = FocusRequester()
+    val topRatedTv = FocusRequester()
+    val watchListMovies = FocusRequester()
+    val watchListTvShows = FocusRequester()
 }

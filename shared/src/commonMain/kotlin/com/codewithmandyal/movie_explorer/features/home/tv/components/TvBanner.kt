@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -38,6 +39,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.focusTarget
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -45,6 +47,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.codewithmandyal.movie_explorer.core.components.SpaceVertical
@@ -63,7 +66,8 @@ fun TvBanner(
     movie: Movie,
     onWatchNow: (Int) -> Unit = {},
     onDetailsScreen: (Int) -> Unit,
-    onBannerFocusChanged: (Boolean) -> Unit
+    onBannerFocusChanged: (Boolean) -> Unit,
+    onWatchNowFocused: () -> Unit = {}
 ) {
 
     val dimens = LocalTvDimens.current
@@ -99,25 +103,53 @@ fun TvBanner(
             .fillMaxWidth()
             .height(TvBannerDefaults.height(windowType))
             .background(Color.Black)
-    ) {
+    ){
+
+//        AsyncImage(
+//            model = movie.backdropPath,
+//            contentDescription = movie.originalTitle,
+//            modifier = Modifier.fillMaxSize(),
+//            contentScale = ContentScale.Fit
+//        )
 
         AsyncImage(
             model = movie.backdropPath,
             contentDescription = movie.originalTitle,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(0.72f)
+                .align(Alignment.CenterEnd),
+            contentScale = ContentScale.Crop,
+            alignment = Alignment.Center
         )
+
+//        Box(
+//            modifier = Modifier
+//                .fillMaxSize()
+//                .background(
+//                    Brush.horizontalGradient(
+//                        listOf(
+//                            Color.Black.copy(alpha = .92f),
+//                            Color.Black.copy(alpha = .75f),
+//                            Color.Black.copy(alpha = .35f),
+//                            Color.Transparent
+//                        )
+//                    )
+//                )
+//        )
 
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(
                     Brush.horizontalGradient(
-                        listOf(
-                            Color.Black.copy(alpha = .92f),
-                            Color.Black.copy(alpha = .75f),
-                            Color.Black.copy(alpha = .35f),
-                            Color.Transparent
+                        colorStops = arrayOf(
+                            0.00f to Color.Black,
+                            0.25f to Color.Black,
+                            0.45f to Color.Black.copy(alpha = 0.90f),
+                            0.62f to Color.Black.copy(alpha = 0.45f),
+                            0.80f to Color.Black.copy(alpha = 0.12f),
+                            1.00f to Color.Transparent
                         )
                     )
                 )
@@ -222,6 +254,7 @@ fun TvBanner(
 
             SpaceVertical(dimens.itemSpacing)
 
+
             Text(
                 text = movie.overview,
                 style = TextStyle(
@@ -229,7 +262,9 @@ fun TvBanner(
                     fontWeight = FontWeight.Normal,
                     color = Color(0xFFF6C7C7)
                 ),
-                modifier = Modifier.height(100.dp)
+                maxLines = 3,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.width(650.dp)
             )
 
             SpaceVertical(dimens.sectionSpacing / 2)
@@ -238,6 +273,7 @@ fun TvBanner(
                 horizontalArrangement = Arrangement.spacedBy(dimens.itemSpacing)
             ) {
 
+                //Watch now button
                 Box(
                     modifier = Modifier
                         .focusRequester(watchRequester)
@@ -246,17 +282,21 @@ fun TvBanner(
                             down = downRequester
                             right = detailsRequester
                         }
+
                         .onFocusChanged {
                             watchFocused = it.isFocused
+
+                            if (it.isFocused) {
+                                onWatchNowFocused()
+                            }
                         }
                         .graphicsLayer {
                             scaleX = watchScale
                             scaleY = watchScale
-                        }
-                        .focusable()
-                        .clickable {
+                        }.clickable {
                             onWatchNow(movie.id)
                         }
+                        .focusTarget()
                         .width(TvBannerDefaults.watchButtonWidth(windowType))
                         .height(dimens.searchBarHeight)
                         .background(
@@ -291,6 +331,8 @@ fun TvBanner(
                     }
                 }
 
+
+                // Details button
                 Box(
                     modifier = Modifier
                         .focusRequester(detailsRequester)
@@ -306,10 +348,10 @@ fun TvBanner(
                             scaleX = detailsScale
                             scaleY = detailsScale
                         }
-                        .focusable()
                         .clickable {
                             onDetailsScreen(movie.id)
                         }
+                        .focusTarget()
                         .width(TvBannerDefaults.detailsButtonWidth(windowType))
                         .height(dimens.searchBarHeight)
                         .background(
